@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytest
           if [ -f /home/requirements.txt ]; fi
-      - name: Testing with pytest
+      - name: Test with pytest
         run: |
           pytest
           pytest --cov
