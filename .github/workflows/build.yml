@@ -19,8 +19,11 @@ jobs:
           cache: pip
           python-version: 3.9
       - name: Install requirements
-        run: pip install -r requirements.txt
-      - name: Test with pytest
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest
+          if [ -f /home/requirements.txt ]; fi
+      - name: Testing with pytest
         run: |
           pytest
           pytest --cov
